@@ -61,7 +61,7 @@ d3.csv('data/wealth-health-2014.csv').then(function(data) {
 	//color scale:
 	var regions = dataW.map(function (d){return d.Region});
 	var regionsSet = new Set(regions);
-	var myColor = d3.scaleOrdinal(d3.schemeAccent)
+	var myColor = d3.scaleOrdinal(d3.schemePastel1)
 		.domain(regionsSet)
 
 // Map the countries to SVG circles:
