@@ -19,6 +19,26 @@
   font: 10px sans-serif;
 }
 
+body{
+  background-color: lightgrey;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+h1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 50px;
+  color: #005e57;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+h1:hover{
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #005e57, 1px -1px 0 #005e57, -1px 1px 0 #005e57, 1px 1px 0 #005e57;
+}
 
 .axis text {
   font-family: sans-serif;

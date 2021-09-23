@@ -40,7 +40,7 @@ d3.csv('data/wealth-health-2014.csv').then(function(data) {
 		.attr("id", "svg-area")
 
 	//Create linear scales by using the D3 scale functions:
-	var incomeScale = d3.scaleLinear()
+	var incomeScale = d3.scaleLog()
 		.domain([d3.min(dataW, function (d){return d.Income;}), d3.max(dataW, function (d) {
 			return d.Income;
 		})])
@@ -59,13 +59,10 @@ d3.csv('data/wealth-health-2014.csv').then(function(data) {
 		.range([4, 30]);
 
 	//color scale:
-
-	var myColor = d3.scaleLinear()
-		.domain(data.map(function(d) {
-			return d.Region;
-		}))
-		.range(["darkgreen","lightgreen"]);
-
+	var regions = dataW.map(function (d){return d.Region});
+	var regionsSet = new Set(regions);
+	var myColor = d3.scaleOrdinal(d3.schemeAccent)
+		.domain(regionsSet)
 
 // Map the countries to SVG circles:
 // Create group element
